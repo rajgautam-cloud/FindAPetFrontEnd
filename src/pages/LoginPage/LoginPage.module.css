@@ -1,0 +1,36 @@
+.illustrationImage {
+  width: 50vw;
+  padding-top: 15vh;
+}
+.leftContainer {
+  background-color: #c0ffff;
+}
+.container {
+  height: 100vh;
+}
+.loginContainer {
+  background-color: white;
+  color: black;
+  height: auto;
+  width: auto;
+  margin: auto;
+  margin-top: 20vh;
+  border-radius: 10px;
+  margin-left: 18%;
+  margin-right: 18%;
+}
+.input {
+  border: 1px solid #bababa;
+  padding: 5px 15px;
+  width: 250px;
+}
+.label {
+  width: 150px;
+  text-align: left;
+}
+@media only screen and (max-width: 1440px) {
+  .loginContainer {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
