@@ -4,18 +4,19 @@ import { UserOutlined } from "@ant-design/icons";
 import petIllustration from "../../assests/petIllustration.jpg";
 import styles from "./LoginPage.module.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const LogInPage = () => {
   const [signup, setSignup] = useState(false);
   return (
     <div className={styles.container + " row"}>
       <div
         className={
-          styles.leftContainer + " col-xl-6 col-md-12 col-sm-12 col-xs-12"
+          styles.leftContainer + " col-xl-6 col-md-6 col-sm-12 col-xs-12"
         }
       >
         <div className={styles.loginContainer}>
           <div className="">
-            <h1 className="py-3">FindAPet</h1>
+            <h1 className="py-2">FindAPet</h1>
 
             {!signup ? (
               <>
@@ -26,7 +27,7 @@ const LogInPage = () => {
                   wrapperCol={{ span: 16 }}
                   initialValues={{ remember: true }}
                   autoComplete="off"
-                  style={{ paddingTop: "10vh" }}
+                  style={{ paddingLeft: "5%", paddingRight: "5%" }}
                 >
                   <Form.Item
                     label="Email"
@@ -54,19 +55,21 @@ const LogInPage = () => {
                   <Form.Item
                     name="remember"
                     valuePropName="checked"
-                    wrapperCol={{ offset: 1, span: 16 }}
+                    wrapperCol={{ span: 16 }}
                   >
                     <Checkbox>Remember me</Checkbox>
                   </Form.Item>
 
-                  <Form.Item wrapperCol={{ offset: 16, span: 16 }}>
-                    <Button
-                      type="primary"
-                      htmlType="submit"
-                      style={{ backgroundColor: "skyblue", color: "black" }}
-                    >
-                      Log in
-                    </Button>
+                  <Form.Item wrapperCol={{ span: 16 }}>
+                    <Link to="/">
+                      <Button
+                        type="primary"
+                        htmlType="submit"
+                        style={{ backgroundColor: "skyblue", color: "black" }}
+                      >
+                        Log in
+                      </Button>
+                    </Link>
                   </Form.Item>
                 </Form>
                 <div
@@ -90,79 +93,98 @@ const LogInPage = () => {
               </>
             ) : (
               <>
-                <Form
-                  name="basic"
-                  labelCol={{ span: 6 }}
-                  wrapperCol={{ span: 16 }}
-                  initialValues={{ remember: true }}
-                  autoComplete="off"
-                  style={{ paddingTop: "10vh" }}
-                >
-                  <Form.Item
-                    label="Name"
-                    name="name"
-                    rules={[
-                      { required: true, message: "Please input your name!" },
-                    ]}
+                <div className="col-10">
+                  <Form
+                    name="basic"
+                    labelCol={{ span: 6 }}
+                    wrapperCol={{ span: 16 }}
+                    initialValues={{ remember: true }}
+                    autoComplete="off"
+                    style={{
+                      //paddingTop: "10vh",
+                      paddingLeft: "5%",
+                    }}
                   >
-                    <Input />
-                  </Form.Item>
-                  <Form.Item
-                    label="Email"
-                    name="email"
-                    rules={[
-                      { required: true, message: "Please input your email!" },
-                    ]}
-                  >
-                    <Input />
-                  </Form.Item>
-                  <Form.Item label="Address" name="address">
-                    <Input />
-                  </Form.Item>
-                  <Form.Item
-                    label="Postal Code"
-                    name="pincode"
-                    rules={[
-                      { required: true, message: "Please input your pincode!" },
-                    ]}
-                  >
-                    <Input />
-                  </Form.Item>
-
-                  <Form.Item
-                    label="Password"
-                    name="password"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Please input your password!",
-                      },
-                    ]}
-                  >
-                    <Input.Password />
-                  </Form.Item>
-
-                  <Form.Item
-                    name="remember"
-                    valuePropName="checked"
-                    wrapperCol={{ offset: 1, span: 16 }}
-                  >
-                    <Checkbox>Remember me</Checkbox>
-                  </Form.Item>
-
-                  <Form.Item
-                    wrapperCol={{ offset: 16, span: 16 }}
-                    className="py-4"
-                  >
-                    <Button
-                      type="primary"
-                      htmlType="submit"
-                      style={{ backgroundColor: "skyblue", color: "black" }}
+                    <Form.Item
+                      label="Name"
+                      name="name"
+                      rules={[
+                        { required: true, message: "Please input your name!" },
+                      ]}
                     >
-                      Sign up
-                    </Button>
-                  </Form.Item>
-                </Form>
+                      <Input />
+                    </Form.Item>
+                    <Form.Item
+                      label="Email"
+                      name="email"
+                      rules={[
+                        { required: true, message: "Please input your email!" },
+                      ]}
+                    >
+                      <Input />
+                    </Form.Item>
+                    <Form.Item label="Address" name="address">
+                      <Input.TextArea />
+                    </Form.Item>
+                    <Form.Item
+                      label="Postal Code"
+                      name="pincode"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please input your pincode!",
+                        },
+                      ]}
+                    >
+                      <Input />
+                    </Form.Item>
+
+                    <Form.Item
+                      label="Password"
+                      name="password"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please input your password!",
+                        },
+                      ]}
+                    >
+                      <Input.Password />
+                    </Form.Item>
+                    <Form.Item
+                      label="Confirm password"
+                      name="confirmPassword"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please input your password!",
+                        },
+                      ]}
+                    >
+                      <Input.Password />
+                    </Form.Item>
+
+                    <Form.Item
+                      name="remember"
+                      valuePropName="checked"
+                      wrapperCol={{ span: 16 }}
+                    >
+                      <Checkbox>Remember me</Checkbox>
+                    </Form.Item>
+
+                    <Form.Item wrapperCol={{ span: 16 }} className="py-4">
+                      <Link to="/">
+                        <Button
+                          type="primary"
+                          htmlType="submit"
+                          style={{ backgroundColor: "skyblue", color: "black" }}
+                        >
+                          Sign up
+                        </Button>
+                      </Link>
+                    </Form.Item>
+                  </Form>
+                </div>
                 <div
                   style={{
                     color: "#646464",

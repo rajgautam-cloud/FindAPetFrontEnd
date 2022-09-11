@@ -4,6 +4,7 @@
 }
 .leftContainer {
   background-color: #c0ffff;
+  padding-bottom: 5%;
 }
 .container {
   height: 100vh;
@@ -30,7 +31,15 @@
 }
 @media only screen and (max-width: 1440px) {
   .loginContainer {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 5vh;
+  }
+  .container {
+    margin-bottom: 5vh;
+  }
+  .illustrationImage {
+    width: 100vw;
+    padding-top: 5vh;
   }
 }
