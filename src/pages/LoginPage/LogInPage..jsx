@@ -2,6 +2,7 @@ import { Button, Checkbox, Form, Input } from "antd";
 import React from "react";
 import { UserOutlined } from "@ant-design/icons";
 import petIllustration from "../../assests/petIllustration.jpg";
+import logo from "../../assests/logo.svg";
 import styles from "./LoginPage.module.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -16,7 +17,7 @@ const LogInPage = () => {
       >
         <div className={styles.loginContainer}>
           <div className="">
-            <h1 className="py-2">FindAPet</h1>
+            <img src={logo} className="py-4" />
 
             {!signup ? (
               <>
