@@ -10,6 +10,7 @@ import {
 import Search from "antd/lib/input/Search";
 import MediaQuery from "react-responsive";
 import styles from "./Header.module.css";
+import { Link } from "react-router-dom";
 export const Header = () => {
   return (
     <>
@@ -48,9 +49,11 @@ export const Header = () => {
           </div>
           <div className="col-5"></div>
           <div className="col-2">
-            <AppstoreAddOutlined
-              style={{ fontSize: "20px", marginTop: "5px" }}
-            />
+            <Link to="/new-post">
+              <AppstoreAddOutlined
+                style={{ fontSize: "20px", marginTop: "5px" }}
+              />
+            </Link>
           </div>
           <div className="col-2">
             <UserOutlined style={{ fontSize: "20px", marginTop: "5px" }} />
