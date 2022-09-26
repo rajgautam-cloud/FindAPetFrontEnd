@@ -2,3 +2,6 @@
   background-color: #ededed;
   height: fit-content;
 }
+.helpCard .ant-card-body {
+  padding: 5px !important;
+}

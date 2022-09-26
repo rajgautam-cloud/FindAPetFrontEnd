@@ -24,8 +24,8 @@ export const Header = () => {
             <div className="col-2"></div>
           </div>
 
-          <div className="col-6 py-2 row">
-            <div className="col-6"></div>
+          <div className="col-xl-6 col-md-6 col-4 py-2 row">
+            <div className="col-4"></div>
             <div className="col-1 mx-1  my-2">
               <SearchOutlined style={{ fontSize: "20px", fontWeight: "700" }} />
             </div>
@@ -36,9 +36,10 @@ export const Header = () => {
               <img src={adoptIcon} width="30" height="30" />
             </div>
             <div className="col-1 mx-1">
-              <UserOutlined style={{ fontSize: "24px" }} />
+              <Link to="/user-profile">
+                <UserOutlined style={{ fontSize: "24px" }} />
+              </Link>
             </div>
-            <div></div>
           </div>
         </div>
       </MediaQuery>
@@ -56,7 +57,9 @@ export const Header = () => {
             </Link>
           </div>
           <div className="col-2">
-            <UserOutlined style={{ fontSize: "20px", marginTop: "5px" }} />
+            <Link to="/user-profile">
+              <UserOutlined style={{ fontSize: "20px", marginTop: "5px" }} />
+            </Link>
           </div>
         </div>
       </MediaQuery>
